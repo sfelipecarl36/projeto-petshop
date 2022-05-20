@@ -1,0 +1,252 @@
+body{
+  background-color: white !important;
+}
+
+body.overhidden{
+  
+}
+
+.overhidden{
+  overflow-y: hidden !important;
+}
+
+.overblock{  
+  background-color: white !important;
+}
+
+.opaco{
+  opacity: 1 !important;
+}
+
+.transp{
+  opacity: 0.5 !important;
+}
+
+.sidebar {
+  background-color: #b30059;
+  width: 280px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: -280px;
+  z-index: 999;
+  transition: left 0.3s ease, width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  overflow-y: auto;
+  
+}
+
+.nav-mobile {
+  position:fixed;
+  background-color: white;
+  z-index:999;
+  width: 100%;
+  box-shadow: rgb(188, 188, 188) 0px 2px 10px 0px;
+}
+
+
+#checksidebar:checked + .sidebar {
+  /*transform: translateX(280px);*/
+  left: 0px;
+  transition: left .3s ease, width .3s ease;
+  box-shadow: 0px 0px 7px 0px #737373;
+}
+
+.blackdiv{
+  background-color: black;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  z-index: 800;
+  display: none;
+  position: absolute;
+}
+
+#checksidebar:checked .blackdiv {
+  display: block;
+}
+
+.sidebar-menu ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 30px 8px 20px;
+  width: 100%;
+  color: white !important;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.sidebar-menu {
+  padding-bottom: 10px;
+}
+
+.sidebar-item {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.sidebar-item {
+  border-top: 1px solid #f9f9f9;
+}
+
+.sidebar-menu ul li a i {
+  margin-right: 10px;
+  font-size: 12px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.menu-text{
+  color: white;
+}
+
+.fa,
+.fas {
+  font-weight: 900;
+}
+
+.sidebar-menu ul li a i {
+  margin-right: 10px;
+  font-size: 12px;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  background-color: #99004d;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+ul.ulsidebar {
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+span.inputsidebar {
+  width: 160px;
+  color: #74726e;
+  position: relative;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  height: calc(1.5em + 0.5rem);
+
+  display: block;
+  width: 200px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: #495057;
+
+  background-image: url(../img/logopetshop3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  border: 0px solid #007bff;
+
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input.inputsidebar {
+  width: 200px;
+  color: #74726e;
+  flex: 1 1 auto;
+  height: calc(1.5em + 0.5rem);
+
+  display: block;
+  width: 200px;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #495057;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-clip: padding-box;
+  border: 0px solid #007bff;
+
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.img-fluid {
+  padding-left: 20px;
+  width: 50px;
+}
+
+ul.ulsidebar li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div.pesquisa {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  border: 0;
+}
+
+.fa,
+.far,
+.fas {
+  font-family: "Font Awesome 5 Free";
+}
+
+.inputpesquisar {
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background-color: #b30059 !important;
+}
+
+.bars-mobile {
+  font-size: 1.1rem !important;
+  text-align: center !important;
+}
+
+.bars-mobile:active {
+  transition-duration: 40ms;
+  font-size: 1.1rem;
+}
+
+.bars-mobile2 {
+  font-size: 1.2rem !important;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 2 !important;
+  background-color: #99004d !important;
+}
+
+.bars-mobile2:active {
+  transition-duration: 20ms;
+  font-size: 1.2rem;
+}
+
+
+.img-fluid {
+  width: 120px;
+  
+}

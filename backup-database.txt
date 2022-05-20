@@ -1,0 +1,112 @@
+create database petshopdb;
+
+use petshopdb;
+
+create table clientes (
+	id int primary key auto_increment,
+	nome varchar (15),
+    sobrenome varchar (15),
+    sexo varchar(1),
+    numero varchar(15),
+    email varchar (70),
+    senha varchar(15),
+    cpf varchar(14),
+    cidade varchar(15),
+    endereco varchar(70),
+    bairro varchar(15),
+    numero_endereco varchar(6),
+    cep varchar(9),
+    complemento_endereco varchar (40)
+);
+
+create table pets(
+	id int primary key auto_increment,
+	nome varchar (15),
+    sobrenome varchar (15),
+    idade varchar(3),
+    sexo varchar(1),
+    tipo varchar (15),
+    img varchar(70),
+    peso numeric(15,2),
+    raca varchar(15),
+    deficiencia boolean,
+    obs_deficiencia varchar(150),
+    id_cliente int,
+    CONSTRAINT id_cliente FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+
+create table funcao (
+	id int primary key auto_increment,
+    nome varchar(30)
+);
+
+insert into funcao (nome) values ('Veterinário');
+insert into funcao (nome) values ('Tosador');
+
+create table funcionarios (
+	id int primary key auto_increment,
+	nome varchar (15),
+    sobrenome varchar (15),
+    sexo varchar(1),
+    numero varchar(15),
+    email varchar (70),
+    senha varchar(15),
+    cpf varchar(14),
+    funcao_fk int,
+    foreign key (funcao_fk) references funcao(id)
+);
+
+create table tipo_consultas (
+	id int primary key auto_increment,
+    nome varchar(50)
+);
+
+insert into tipo_consultas (nome) values ('Banho e Tosa');
+insert into tipo_consultas (nome) values ('Atendimento Veterinário');
+
+create table status_consultas (
+	id int primary key auto_increment,
+    nome varchar(50)
+);
+
+insert into status_consultas (nome) values ('Em aberto');
+insert into status_consultas (nome) values ('Atendido');
+insert into status_consultas (nome) values ('Cancelado');
+
+create table horarios_veterinario (
+	hora varchar(5) primary key,
+    veterinario_fk int,
+    foreign key (veterinario_fk) references funcionarios(id)
+);
+
+create table consultas (
+	id int primary key auto_increment,
+    cliente_fk int,
+    foreign key (cliente_fk) references clientes(id),
+    paciente_fk int,
+    foreign key (paciente_fk) references pets(id),
+    funcionario_fk int,
+    foreign key (funcionario_fk) references funcionarios(id),
+    tipo_fk int,
+    foreign key (tipo_fk) references tipo_consultas(id),
+    data_abertura varchar(30),
+    data_fechamento varchar(30),
+    horario_consulta varchar(5),
+    foreign key (horario_consulta) references horarios_veterinario(hora),
+    status_fk int,
+    foreign key (status_fk) references status_consultas(id)
+);
+
+insert into funcionarios (nome, sobrenome, sexo, numero, email, senha, cpf, funcao_fk) values ("Edvaldo", "Moraes", "M", "(91) 98432-3218", "edvaldomoraes@gmail.com", "tunaluso123", "678.423.163.82", 1);
+insert into funcionarios (nome, sobrenome, sexo, numero, email, senha, cpf, funcao_fk) values ("Edna", "Santana", "F", "(91) 98235-6148", "ednasantana@gmail.com", "remo123", "232.535.114.24", 1);
+
+insert into horarios_veterinario (hora, veterinario_fk) values ("08:00", 1);
+insert into horarios_veterinario (hora, veterinario_fk) values ("09:00", 1);
+insert into horarios_veterinario (hora, veterinario_fk) values ("10:00", 1);
+insert into horarios_veterinario (hora, veterinario_fk) values ("11:00", 1);
+insert into horarios_veterinario (hora, veterinario_fk) values ("13:00", 2);
+insert into horarios_veterinario (hora, veterinario_fk) values ("14:00", 2);
+insert into horarios_veterinario (hora, veterinario_fk) values ("15:00", 2);
+insert into horarios_veterinario (hora, veterinario_fk) values ("16:00", 2);
+insert into horarios_veterinario (hora, veterinario_fk) values ("17:00", 2);
+insert into horarios_veterinario (hora, veterinario_fk) values ("18:00", 2);
