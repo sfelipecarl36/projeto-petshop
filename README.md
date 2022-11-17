@@ -1,7 +1,7 @@
 # projeto-petshop
 ### Sistema de Petshop com site Interno para administradores e uma versão adaptada para o cliente final
 
-![screenshot][screenshot.png]
+![screenshot](screenshot.png "Página Inicial")
 
 ## Possui:
 
